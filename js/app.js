@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const isDownload = button.hasAttribute("download");
       if (!isDownload) {
-        button.setAttribute("download", target.split("/").pop());
+        const filename = target.split("/").pop();
+        button.setAttribute("download", filename || "download");
       }
     });
   });
